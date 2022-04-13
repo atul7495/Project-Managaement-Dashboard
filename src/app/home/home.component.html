@@ -1,0 +1,34 @@
+<mat-list>
+  <div class="partition" cdkDropListGroup  >
+    <div class="list1" *ngFor="let list of arr">
+      <div class="title" >
+        {{ list.title }} <button mat-icon-button (click)="RemoveList(list.id)"> <mat-icon>remove_circle</mat-icon></button>
+      </div>
+    
+      <hr>
+    <div cdkDropList [id]="list.id" [cdkDropListData]="list.Card" (cdkDropListDropped)="drop($event)">
+      <div class="card"  *ngFor="let x of list.Card" [cdkDragData]="x" cdkDrag>
+        <mat-card>
+          <div class="cancel">
+            <button mat-icon-button (click)="RemoveCard(list.id,x.CardId)">
+            <mat-icon>cancel</mat-icon>
+          </button>
+          </div>
+          <mat-card-title>
+            {{x.Title}}
+          </mat-card-title>
+          <mat-card-content>
+            {{x.Desc}}
+          </mat-card-content>
+          {{x.CreationTime}}
+        </mat-card>
+      </div>
+      </div>
+   
+     <button mat-icon-button  (click)="openDialog(list.id)"> 
+       <mat-icon>add_circle</mat-icon>
+      </button>
+   
+    </div>
+  </div>
+</mat-list>

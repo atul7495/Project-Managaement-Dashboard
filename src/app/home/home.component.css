@@ -1,0 +1,30 @@
+.partition {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 4px;
+   
+}
+
+.partition > div {
+    margin:6px;
+    border-right: 3px solid black;
+    height: 200px;
+    
+}
+.card{
+    text-align: center;
+    margin-top: 6px;
+}
+.list1{
+    margin: 4px;
+    padding: 6px;
+}
+.cancel{
+    text-align: right;
+    margin-bottom: 3px;
+}
+
+.title{
+    text-align: right;
+}
+

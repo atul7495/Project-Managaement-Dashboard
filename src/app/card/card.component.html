@@ -1,0 +1,35 @@
+<form [formGroup]="CardForm" (submit)="OnSubmit()">
+  <div mat-dialog-content>
+    <mat-form-field>
+      <input matInput type="text" appearance="standard" formControlName="Title" placeholder="Enter Title">
+      <mat-error
+        *ngIf="CardForm.get('Title')?.invalid || (CardForm.get('Title')?.dirty || CardForm.get('Title')?.touched)">
+        <div *ngIf="CardForm.get('Title')?.errors?.required">
+          This field is required.
+        </div>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" appearance="standard" formControlName="Desc" placeholder="Enter Discription">
+      <mat-error
+        *ngIf="CardForm.get('Desc')?.invalid || (CardForm.get('Desc')?.dirty || CardForm.get('Desc')?.touched)">
+        <div *ngIf="CardForm.get('Desc')?.errors?.required">
+          This field is required.
+        </div>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="time" appearance="standard" formControlName="CreationTime" placeholder="Enter Time">
+      <mat-error
+        *ngIf="CardForm.get('CreationTime')?.invalid || (CardForm.get('CreationTime')?.dirty || CardForm.get('CreationTime')?.touched)">
+        <div *ngIf="CardForm.get('CreationTime')?.errors?.required">
+          This field is required.
+        </div>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button cdkFocusInitial>Save</button>
+  </div>
+</form>

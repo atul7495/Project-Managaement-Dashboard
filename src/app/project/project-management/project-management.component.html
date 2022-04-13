@@ -1,0 +1,17 @@
+<mat-card *ngIf="isAddMode">
+  <form [formGroup]="ProjectForm" (submit)="OnSubmit()">
+    <mat-form-field>
+      <input matInput type="text" appearance="standard" formControlName="ptitle" placeholder="Enter Title">
+      <mat-error
+        *ngIf="ProjectForm.get('ptitle')?.invalid || (ProjectForm.get('ptitle')?.dirty || ProjectForm.get('ptitle')?.touched)">
+        <div *ngIf="ProjectForm.get('ptitle')?.errors?.required">
+          This field is required.
+        </div>
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary">Submit</button>
+    &nbsp;
+    <button mat-raised-button color="warn" (click)='OnCancel()'>Cancel</button>
+  </form>
+</mat-card>

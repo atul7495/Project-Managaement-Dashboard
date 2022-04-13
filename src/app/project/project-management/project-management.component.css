@@ -1,0 +1,14 @@
+form {
+    padding: 0%;
+   }
+  
+mat-form-field,
+  textarea{
+    width: 100%;
+  }
+  
+mat-card{
+    margin-left: 20rem;
+    width:30%;
+  }
+  
